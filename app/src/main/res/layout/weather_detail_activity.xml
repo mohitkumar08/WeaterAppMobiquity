@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="handler"
+            type="com.example.weatherapp.ui.city.WeatherDetailActivity" />
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/_8sdp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_20ssp"
+                android:textStyle="bold"
+                tools:text="26C" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tv_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_4sdp"
+                android:gravity="center"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_17ssp"
+                tools:text="26C" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:layout_marginVertical="@dimen/_16sdp"
+                app:cardBackgroundColor="@color/purple_500"
+                app:cardCornerRadius="@dimen/_16sdp"
+                app:contentPaddingBottom="@dimen/_10sdp"
+                app:contentPaddingLeft="@dimen/_14sdp"
+                app:contentPaddingRight="@dimen/_14sdp"
+                app:contentPaddingTop="@dimen/_10sdp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tv_temperature"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_48ssp"
+                        android:textStyle="bold"
+                        tools:text="26C" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/weather_main"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_16ssp"
+                        tools:text="Clear" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/weather_detail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/_8sdp"
+                        android:gravity="center"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_16ssp"
+                        android:textStyle="bold"
+                        tools:text="clear sky" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/country"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="IN"
+                        android:textColor="@color/white"
+                        android:textSize="@dimen/_16ssp"
+                        tools:text="IN" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/_84sdp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_marginHorizontal="@dimen/_8sdp"
+                        app:cardBackgroundColor="@color/teal_200"
+                        app:cardCornerRadius="@dimen/_12sdp"
+                        app:contentPaddingLeft="@dimen/_14sdp"
+                        app:contentPaddingRight="@dimen/_14sdp"
+                        app:contentPaddingTop="@dimen/_4sdp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/text_view"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Temperature"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_16ssp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:text="Temperature" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/temp_feels"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                android:gravity="center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_14ssp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/text_view"
+                                tools:text="36" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/temp_min"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                android:gravity="center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_14ssp"
+                                app:layout_constraintEnd_toStartOf="@+id/temp_feels"
+                                app:layout_constraintTop_toBottomOf="@+id/temp_feels"
+                                tools:text="16" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/temp_max"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_4sdp"
+                                android:gravity="start"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_14ssp"
+                                app:layout_constraintStart_toEndOf="@+id/temp_feels"
+                                app:layout_constraintTop_toBottomOf="@+id/temp_feels"
+                                tools:text="18" />
+
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_marginHorizontal="@dimen/_4sdp"
+                        app:cardBackgroundColor="#fda50f"
+                        app:cardCornerRadius="@dimen/_12sdp"
+                        app:contentPaddingLeft="@dimen/_14sdp"
+                        app:contentPaddingRight="@dimen/_14sdp"
+                        app:contentPaddingTop="@dimen/_4sdp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/text_view_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Wind"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_16ssp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:text="Wind" />
+
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/wind_speed"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_8sdp"
+                                android:gravity="center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_14ssp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/text_view_1"
+                                tools:text="16" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_marginHorizontal="@dimen/_4sdp"
+                        app:cardBackgroundColor="#e84545"
+                        app:cardCornerRadius="@dimen/_12sdp"
+                        app:contentPaddingLeft="@dimen/_14sdp"
+                        app:contentPaddingRight="@dimen/_14sdp"
+                        app:contentPaddingTop="@dimen/_4sdp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/text_view_2"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Pressure"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_16ssp"
+                                android:textStyle="bold"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:text="Pressure" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_pressure"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_8sdp"
+                                android:gravity="center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_14ssp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/text_view_2"
+                                tools:text="36" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="top"
+                        android:layout_marginHorizontal="@dimen/_4sdp"
+                        app:cardBackgroundColor="#cdc733"
+                        app:cardCornerRadius="@dimen/_12sdp"
+                        app:contentPaddingLeft="@dimen/_14sdp"
+                        app:contentPaddingRight="@dimen/_14sdp"
+                        app:contentPaddingTop="@dimen/_4sdp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/text_view_3"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center"
+                                android:text="Humidity"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_16ssp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tv_humidity"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="@dimen/_8sdp"
+                                android:gravity="center"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_14ssp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/text_view_3"
+                                tools:text="36" />
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/text_view_6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:gravity="start|center"
+                android:text="@string/next_5_day_forecast"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_16sdp"
+                android:textStyle="bold" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_forecast"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="@dimen/_4sdp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+</layout>
