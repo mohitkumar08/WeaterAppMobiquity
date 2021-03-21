@@ -1,0 +1,52 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 1,
+    "identityHash": "59d6c1b8a3f93d15f17802621e23e2b1",
+    "entities": [
+      {
+        "tableName": "favorite_location",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`cityName` TEXT NOT NULL, `latitude` REAL NOT NULL, `longitude` REAL NOT NULL, `added` INTEGER NOT NULL, PRIMARY KEY(`cityName`))",
+        "fields": [
+          {
+            "fieldPath": "cityName",
+            "columnName": "cityName",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "latitude",
+            "columnName": "latitude",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "longitude",
+            "columnName": "longitude",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "added",
+            "columnName": "added",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "columnNames": [
+            "cityName"
+          ],
+          "autoGenerate": false
+        },
+        "indices": [],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, '59d6c1b8a3f93d15f17802621e23e2b1')"
+    ]
+  }
+}

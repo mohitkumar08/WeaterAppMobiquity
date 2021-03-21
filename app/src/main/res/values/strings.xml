@@ -3,4 +3,8 @@
     <string name="title_activity_home">FullscreenActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="add">Add</string>
+    <string name="title_activity_add_location">Map</string>
+    <string name="done">Done</string>
+    <string name="next_5_day_forecast">Next 5 day forecast</string>
 </resources>
